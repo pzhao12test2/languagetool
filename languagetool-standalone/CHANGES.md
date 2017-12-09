@@ -4,9 +4,8 @@
 
 #### English
   * removed the category MISC and moved the rules to more specific categories
-  * added WordCoherencyRule
+  * added WordCordCoherencyRule
   * added support for locale-specific spelling suggestions (locale-specific spelling_en-XY.txt files)
-  * updated en_GB spellchecker dictionary from https://github.com/marcoagpinto/aoo-mozilla-en-dict
 
 #### Galician
   * added and improved rules, including:
@@ -15,7 +14,7 @@
     - style: barbarism, redundant expressions, and wordy expressions detection added
     - typography: spacing and number formatting improvements; chemical formulas; degree 
       signs; dashes; punctuation; international system standards; and mathematical symbol formatting
-  * development, punctuation and repetition rules categories added
+  * development and LibreOffice rules categories added
   * multiword disambiguation added
   * disambiguation improvements
   * new word tokenizer
@@ -31,18 +30,10 @@
 
 #### German
   * added and improved rules
-  * New rule that checks coherency of hyphen usage in compounds, e.g. it complains
-    when "Ärzteverband" and "Ärzte-Verband" are both used in the same text. While both
-    spellings are correct, it's probably a good idea to stick to one spelling.
   * improved POS tagging of hyphenated compounds (e.g., "CO2-arm" is recgonized as a variant of "arm")
-
-#### Polish
-  * added rules
-  * disambiguation improvements
 
 #### Portuguese
   * added and improved rules
-  * Libreoffice category rules moved to other categories
   * disambiguation improvements
   * updated Hunspell dictionaries to:
     - [pt-PT pos-AO] Dicionários Portugueses Complementares 2.2
@@ -58,12 +49,6 @@
 
 #### General
   * Now runs with Java 9 (compilation with Maven still has issue with Java9)
-  * The spell checker tries harder to find suggestion for misspellings that have
-    a Levenshtein distance of larger than 2. The maximum Levenshtein distance is now 3.
-    This way you now get a suggestion for e.g. `algortherm` (algorithm) or `theromator` (thermometer).
-    In the worst case (every single word of a text misspelled), this has a performance
-    penalty of about 30%.
-  * Better support for Unicode codepoints greater than `0xFFFF`
 
 #### GUI (stand-alone version)
   * show line numbers in the text area
@@ -73,9 +58,6 @@
     describes the error or grammar rule in more detail. Before, only the `Rule`
     could have a URL. A `RuleMatch` URL will overwrite the `Rule` URL in the
     JSON output.
-  * A `RuleMatch` now also has information about the sentence the error occurred in
-    (it used to have only position information and the caller was expected to find
-    the error context and/or sentence position in the original text).
 
 #### LT server
   * change in configuration: `requestLimit` and `requestLimitPeriodInSeconds` now both
@@ -83,11 +65,6 @@
   * new property key `timeoutRequestLimit`: similar to `requestLimit`, but this one limits 
     not all requests but blocks once this many timeout have been caused by the IP in the
     time span set by `requestLimitPeriodInSeconds`
-  * new property key `requestLimitInBytes`: similar to `requestLimit`, but this one limits
-    the aggregated size of requests caused by an IP in the time span set 
-    by `requestLimitPeriodInSeconds`
-  * The JSON output now contains a `sentence` property with the text of the sentence
-    the occurred in.
 
 
 ## 3.9 (2017-09-26)

@@ -39,8 +39,8 @@ final class WikipediaRuleMatch extends RuleMatch {
   private final Date editDate;
   private final long diffId;
   
-  WikipediaRuleMatch(Language language, RuleMatch match, String errorContext, AtomFeedItem feedItem) {
-    super(match.getRule(), match.getSentence(), match.getFromPos(), match.getToPos(), match.getMessage());
+  WikipediaRuleMatch(Language language, RuleMatch ruleMatch, String errorContext, AtomFeedItem feedItem) {
+    super(ruleMatch.getRule(), ruleMatch.getFromPos(), ruleMatch.getToPos(), ruleMatch.getMessage());
     this.language = Objects.requireNonNull(language);
     this.errorContext = Objects.requireNonNull(errorContext);
     this.title = Objects.requireNonNull(feedItem.getTitle());

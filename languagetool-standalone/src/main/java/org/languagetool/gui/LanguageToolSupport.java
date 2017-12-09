@@ -849,8 +849,6 @@ class LanguageToolSupport {
 
   private static class Span {
 
-    private static final int MAX_SUGGESTIONS = 5;
-    
     private int start;
     private int end;
     private final String msg;
@@ -868,8 +866,7 @@ class LanguageToolSupport {
       msg = Tools.shortenComment(tmp);
       desc = match.getMessage();
       replacement = new ArrayList<>();
-      List<String> repl = match.getSuggestedReplacements();
-      replacement.addAll(repl.subList(0, Math.min(MAX_SUGGESTIONS, repl.size())));
+      replacement.addAll(match.getSuggestedReplacements());
       rule = match.getRule();
     }
   }

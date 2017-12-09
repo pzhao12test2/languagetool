@@ -26,7 +26,6 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
 import org.languagetool.tools.StringTools;
 
 /**
@@ -194,7 +193,12 @@ public class WordTokenizer implements Tokenizer {
   }
 
   private boolean isProtocol(String token) {
-    return PROTOCOLS.contains(token);
+    for (String protocol : PROTOCOLS) {
+      if (token.equals(protocol)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private boolean urlEndsAt(int i, List<String> l, String urlQuote) {
@@ -206,7 +210,7 @@ public class WordTokenizer implements Tokenizer {
     } else if (l.size() > i + 1) {
       String nToken = l.get(i + 1);
       if (StringTools.isWhitespace(nToken) &&
-            (StringUtils.equalsAny(token, ".", ",", ";", ":", "!", "?") || token.equals(urlQuote))) {
+            (token.equals(".") || token.equals(",") || token.equals(";") || token.equals(":") || token.equals("!") || token.equals("?") || token.equals(urlQuote))) {
         return true;
       }
     } else {

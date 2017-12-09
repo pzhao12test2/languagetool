@@ -89,7 +89,7 @@
   </unification>
     <!-- Unification rules retrieved from galician grammar.xml - END  -->
 
-    <!--rule id="WORKAROUND_MISSING_ADVERBS_POS" name="Fix missing POS in adverbes">
+    <!--rule id="WORKAROUND_MISSING_ADVERBS_POS" name="fix missing POS in adverbes">
     < Created by Tiago F. Santos, Portuguese rule, 2017-07-24>
       <pattern>
           <token regexp="yes" postag='I|RG' postag_regexp='yes'>.*mente$</token>
@@ -100,7 +100,7 @@
 
     <!--		multiwords.txt related			-->
     <!-- 	Workaround retrieved from Catalan grammar.xml	>
-  <rulegroup id="WORKAROUND_SENTENCE_TOKENIZATION" name="Fix problems with sentence tokenization">
+  <rulegroup id="WORKAROUND_SENTENCE_TOKENIZATION" name="fix problems with sentence tokenization">
     <rule>
       <pattern>
           <token regexp="yes">[A-Z]</token>
@@ -125,44 +125,44 @@
     </rule>
   </rulegroup-->
 
-  <rulegroup id="NOMES_PROPRIOS_MULTIWORD" name="Nomes proprios em multiwords">
+  <rulegroup id="nomes_proprios_multiword" name="nomes proprios em multiwords">
     <!-- 	Rulegroup retrieved from Catalan grammar.xml	-->
-    <rule id="NOMEPROPRIO2PALAVRAS_FILTRA_MS" name="Nome proprio 2 palavras - MS">
+    <rule id="nomeproprio2palavras_filtra_MS" name="nome proprio 2 palavras - MS">
       <pattern>
           <token postag="&lt;NPMS.+&gt;" postag_regexp="yes"/>
           <token postag="&lt;/NP.+&gt;" postag_regexp="yes"/>
       </pattern>
       <disambig action="replace"><wd pos="NPMS000_"/><wd pos="NPMS000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO2PALAVRAS_FILTRA_MP" name="Nome proprio 2 palavras - MP">
+    <rule id="nomeproprio2palavras_filtra_MP" name="nome proprio 2 palavras - MP">
       <pattern>
           <token postag="&lt;NPMP.+&gt;" postag_regexp="yes"/>
           <token postag="&lt;/NP.+&gt;" postag_regexp="yes"/>
       </pattern>
       <disambig action="replace"><wd pos="NPMP000_"/><wd pos="NPMP000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO2PALAVRAS_FILTRA_FS" name="Nome proprio 2 palavras - FS">
+    <rule id="nomeproprio2palavras_filtra_FS" name="nome proprio 2 palavras - FS">
       <pattern>
           <token postag="&lt;NPFS.+&gt;" postag_regexp="yes"/>
           <token postag="&lt;/NP.+&gt;" postag_regexp="yes"/>
       </pattern>
       <disambig action="replace"><wd pos="NPFS000_"/><wd pos="NPFS000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO2PALAVRAS_FILTRA_FP" name="Nome proprio 2 palavras - FP">
+    <rule id="nomeproprio2palavras_filtra_FP" name="nome proprio 2 palavras - FP">
       <pattern>
           <token postag="&lt;NPFP.+&gt;" postag_regexp="yes"/>
           <token postag="&lt;/NP.+&gt;" postag_regexp="yes"/>
       </pattern>
       <disambig action="replace"><wd pos="NPFP000_"/><wd pos="NPFP000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO2PALAVRAS_FILTRA_CN" name="Nome proprio 2 palavras - CN">
+    <rule id="nomeproprio2palavras_filtra_CN" name="nome proprio 2 palavras - CN">
       <pattern>
           <token postag="&lt;NPCN.+&gt;" postag_regexp="yes"/>
           <token postag="&lt;/NPCN.+&gt;" postag_regexp="yes"/>
       </pattern>
       <disambig action="replace"><wd pos="NPCN000_"/><wd pos="NPCN000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO3PALAVRAS" name="Nome proprio 3 palavras">
+    <rule id="nomeproprio3palavras" name="nome proprio 3 palavras">
       <pattern>
           <token postag="&lt;NP.+&gt;" postag_regexp="yes"/>
           <token/>
@@ -170,7 +170,7 @@
       </pattern>
       <disambig action="add"><wd pos="NP00000_"/><wd lemma="NP" pos="NP00000_"/><wd pos="NP00000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO4PALAVRAS" name="Nome proprio 4 palavras">
+    <rule id="nomeproprio4palavras" name="nome proprio 4 palavras">
       <pattern>
           <token postag="&lt;NP.+&gt;" postag_regexp="yes"/>
           <token/>
@@ -179,7 +179,7 @@
       </pattern>
       <disambig action="add"><wd pos="NP00000_"/><wd lemma="NP" pos="NP00000_"/><wd lemma="NP" pos="NP00000_"/><wd pos="NP00000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO3PALAVRAS_FILTRA" name="Nome proprio 3 palavras">
+    <rule id="nomeproprio3palavras_filtra" name="nome proprio 3 palavras">
       <pattern>
           <token postag="&lt;NP.+&gt;" postag_regexp="yes"/>
           <token postag="NP00000"/>
@@ -187,7 +187,7 @@
       </pattern>
       <disambig action="replace"><wd pos="NP00000_"/><wd pos="NP00000_"/><wd pos="NP00000_"/></disambig>
     </rule>
-    <rule id="NOMEPROPRIO4PALAVRAS-FILTRA" name="Nome proprio 4 palavras">
+    <rule id="nomeproprio4palavras-filtra" name="nome proprio 4 palavras">
       <pattern>
           <token postag="&lt;NP.+&gt;" postag_regexp="yes"/>
           <token postag="NP00000"/>
@@ -197,9 +197,9 @@
       <disambig action="replace"><wd pos="NP00000_"/><wd pos="NP00000_"/><wd pos="NP00000_"/><wd pos="NP00000_"/></disambig>
     </rule>
   </rulegroup>
-  <rulegroup id="NOME_COMÚM_MULTIWORD" name="Nomes comuns em multiwords">
+  <rulegroup id="nome_comúm_multiword" name="nomes comuns em multiwords">
     <!-- 	Rulegroup based on Catalan grammar.xml	-->
-    <rule id="NOMECOMUM2PALAVRAS" name="Nome comúm 2 palavras">
+    <rule id="nomecomum2palavras" name="nome comúm 2 palavras">
       <pattern>
         <marker>
           <token postag="&lt;NCFS000&gt;"/>
@@ -294,15 +294,6 @@
     <rule>
       <pattern>
         <marker>
-          <token postag="&lt;RG_&gt;"/>
-          <token postag="&lt;/RG_&gt;"/>
-        </marker>
-      </pattern>
-      <disambig action="replace"><wd pos="RG_"/><wd pos="RG_"/></disambig>
-    </rule>
-    <rule>
-      <pattern>
-        <marker>
           <token postag="&lt;RG&gt;"/>
           <token/>
           <token postag="&lt;/RG&gt;"/>
@@ -312,31 +303,12 @@
     </rule>
     <rule>
       <pattern>
-        <marker>
-          <token postag="&lt;RG_&gt;"/>
-          <token/>
-          <token postag="&lt;/RG_&gt;"/>
-        </marker>
-      </pattern>
-      <disambig action="replace"><wd pos="RG_"/><wd pos="RG_"/><wd pos="RG_"/></disambig>
-    </rule>
-    <rule>
-      <pattern>
           <token postag="&lt;RG&gt;"/>
           <token/>
           <token/>
           <token postag="&lt;/RG&gt;"/>
       </pattern>
       <disambig action="replace"><wd pos="RG"/><wd pos="RG"/><wd pos="RG"/><wd pos="RG"/></disambig>
-    </rule>
-    <rule>
-      <pattern>
-          <token postag="&lt;RG_&gt;"/>
-          <token/>
-          <token/>
-          <token postag="&lt;/RG_&gt;"/>
-      </pattern>
-      <disambig action="replace"><wd pos="RG_"/><wd pos="RG_"/><wd pos="RG_"/><wd pos="RG_"/></disambig>
     </rule>
     <rule>
       <pattern>
@@ -458,7 +430,7 @@
       </pattern>
       <disambig action="replace"><wd pos="I"/><wd pos="I"/></disambig>
     </rule>
-  <rulegroup id="VAN_GOGH" name="Van Gogh">
+  <rulegroup id="VAN_GOGH" name="van Gogh">
     <!-- 	Rulegroup retrieved from Catalan grammar.xml	-->
     <rule>
       <pattern>
@@ -491,7 +463,7 @@
       <disambig action="replace"><wd pos="NPCNSP0_"/></disambig>
     </rule>
   </rulegroup>
-    <rule id="DA_VINCI" name="Da Vinci">
+    <rule id="DA_VINCI" name="da Vinci">
     <!-- 		Rule retrieved from Catalan grammar.xml		-->
       <pattern>
         <marker>
@@ -755,7 +727,7 @@
 
     <!-- DDN : Determinante possesivo + Determinante indefinido + Nome -->
     <!-- 		l18n from Spanish disambiguation.xml by Tiago F. Santos		-->
-    <rule id="DDN_U" name="Det + Nom + Adj">
+    <rule id="DDN_u" name="Det + Nom + Adj">
       <pattern>
         <marker>
           <unify>
@@ -882,7 +854,7 @@
     <!-- Verbo + Preposição: p.ex. 'a' como preposição depois do verbo	-->
     <!-- Created by Tiago F. Santos, Portuguese rule, 2016-11-15  	-->
     <!-- https://pt.wikipedia.org/wiki/A_(preposi%C3%A7%C3%A3o)		-->
-  <rulegroup id="A_PREPOSIÇÂO" name="Verbo + a (preposição)">
+  <rulegroup id="A_PREPOSIÇÂO" name="verbo + a (preposição)">
     <rule>
       <pattern>
         <marker>
@@ -1125,24 +1097,15 @@
       <disambig action="remove" postag="V.N.+"/>
     </rule>
 
-    <rule id="PUNCT" name="Pontuação">
+    <rule id="PUNCT" name="pontuação">
     <!-- 		l18n from Spanish disambiguation.xml by Tiago F. Santos		-->
       <pattern>
           <token regexp="yes">[.,;:!?…()\[\]&#8209;&#8210;&#8211;&#8212;&#8213;«»”“‘’\-]|[\*×∗·\+\/÷:=]</token>
       </pattern>
       <disambig action="add"><wd pos="_PUNCT"/></disambig>
     </rule>
-        <rule id="TRES_PONTOS" name="Reticencias">
-    <!-- 		l18n from Catalan disambiguation.xml by Tiago F. Santos		-->
-            <pattern>
-                <token>.</token>
-                <token>.</token>
-                <token>.</token>
-            </pattern>
-            <disambig action="add"><wd pos="_TRESPONTOS"/><wd pos="_TRESPONTOS"/><wd pos="_TRESPONTOS"/></disambig>
-        </rule>
 
-  <rulegroup id="QUOT" name="Quotation marks">
+  <rulegroup name="Quotation marks" id="QUOT">
     <!-- 		l18n from English disambiguation.xml by Tiago F. Santos		-->
     <rule>
       <pattern>
@@ -1205,7 +1168,7 @@
     </rule>
   </rulegroup>
 
-  <rulegroup id="PERIFRASES" name="Perífrases de infinitivo">
+  <rulegroup id="PERIFRASES" name="perífrases de infinitivo">
     <!-- 		l18n from Galician disambiguation.xml by Tiago F. Santos		-->
     <rule>
       <pattern>
@@ -1319,7 +1282,7 @@
     </rule>
   </rulegroup>
 
-  <rulegroup  id="NUMBER" name="Number">
+  <rulegroup  id="NUMBER" name="number">
     <!-- Created by Tiago F. Santos, Portuguese rule, 2016-11-15  	-->
     <rule>
       <pattern>
@@ -1447,7 +1410,7 @@
       <disambig postag="SP000"/>
     </rule>
 
-  <rulegroup id="ROMAN_NUMBER" name="Roman number">
+  <rulegroup id="ROMAN_NUMBER" name="roman number">
     <!-- 		l18n from french and catalan disambiguation.xml by Tiago F. Santos		-->
     <rule>
       <pattern>
@@ -1645,14 +1608,14 @@
   </rulegroup>
 
     <!-- XXX Ignore Spelling Rules XXX -->
-    <rule id="EN_VOGUE" name="En vogue">
+    <rule name="en vogue" id="EN_VOGUE">
       <pattern>
           <token>en</token>
           <token regexp="yes">vogue|gros|masse|passant|détail</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="COTE_DAZUR" name="Côte d'Azur">
+    <rule name="Côte d'Azur" id="COTE_DAZUR">
       <pattern>
           <token>Côte</token>
           <token>d</token>
@@ -1661,35 +1624,35 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="LOS_ANGELES" name="Los Angeles">
+    <rule name="Los Angeles" id="LOS_ANGELES">
       <pattern>
           <token>Los</token>
           <token regexp="yes">Alamos|Angeles</token>
       </pattern>
       <disambig action="immunize"/>
     </rule>
-    <rule id="LAS_VEGAS" name="Las Vegas">
+    <rule name="Las Vegas" id="LAS_VEGAS">
       <pattern case_sensitive="yes">
           <token>Las</token>
           <token>Vegas</token>
       </pattern>
       <disambig action="immunize"/>
     </rule>
-    <rule id="VALLEYS" name="Valleys">
+    <rule name="Valleys" id="VALLEYS">
       <pattern case_sensitive="yes">
           <token regexp="yes">Death|Silicon</token>
           <token>Valley</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="OAK_RIDGE" name="Oak Ridge">
+    <rule name="Oak Ridge" id="OAK_RIDGE">
       <pattern case_sensitive="yes">
           <token>Oak</token>
           <token>Ridge</token>
       </pattern>
       <disambig action="immunize"/>
     </rule>
-    <rule id="MISE_EN_SCENE" name="Mise en scène">
+    <rule name="Mise en scène" id="MISE_EN_SCENE">
       <pattern>
           <token>Mise</token>
           <token>en</token>
@@ -1697,7 +1660,7 @@
       </pattern>
       <disambig action="immunize"/>
     </rule>
-    <rule id="RHYTHM_AND_BLUES" name="Rhythm and Blues">
+    <rule name="Rhythm and Blues" id="RHYTHM_AND_BLUES">
       <pattern>
           <token>Rhythm</token>
           <token>and</token>
@@ -1705,7 +1668,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ROCK_AND_ROLL" name="Rock and Roll">
+    <rule name="Rock and Roll" id="ROCK_AND_ROLL">
       <pattern>
           <token>Rock</token>
           <token>and</token>
@@ -1713,83 +1676,83 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ALEXIUS_MEINONG" name="Alexius Meinong">
+    <rule name="Alexius Meinong" id="ALEXIUS_MEINONG">
       <pattern>
           <token>Alexius</token>
           <token regexp="yes">Meinongs?</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ALFRED_NOBEL" name="Alfred Nobel">
+    <rule name="Alfred Nobel" id="ALFRED_NOBEL">
       <pattern>
           <token>Alfred</token>
           <token>Nobel</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ADDIS_ABEBA" name="Addis Abeba">
+    <rule name="Addis Abeba" id="ADDIS_ABEBA">
       <pattern>
           <token>Addis</token>
           <token>Abeba</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="LA_PAZ" name="La Paz">
+    <rule name="La Paz" id="LA_PAZ">
       <pattern>
           <token>La</token>
           <token>Paz</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SANTO_DOMINGO" name="Santo Domingo">
+    <rule name="Santo Domingo" id="SANTO_DOMINGO">
       <pattern>
           <token>Santo</token>
           <token>Domingo</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="LE_HAVRE" name="Le Havre/Le Mans">
+    <rule name="Le Havre/Le Mans" id="LE_HAVRE">
       <pattern>
           <token>Le</token>
           <token regexp='yes'>Havre|Mans</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PHNOM_PENH" name="Phnom Penh">
+    <rule name="Phnom Penh" id="PHNOM_PENH">
       <pattern>
           <token>Phnom</token>
           <token>Penh</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="OPEN_SOURCE" name="Open Source">
+    <rule name="Open Source" id="OPEN_SOURCE">
       <pattern>
           <token>Open</token>
           <token>Source</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="OPEN_SOURCE_SOFTWARE" name="Open-Source-Software">
+    <rule name="Open-Source-Software" id="OPEN_SOURCE_SOFTWARE">
       <pattern>
           <token>Open-Source-Software</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="JUNGLE_WORLD" name="Jungle World">
+    <rule name="Jungle World" id="JUNGLE_WORLD">
       <pattern>
           <token>Jungle</token>
           <token>World</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="STONES" name="Rolling Stones">
+    <rule name="Rolling Stones" id="STONES">
       <pattern>
           <token>Rolling</token>
           <token regexp='yes'>Stones?</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="A_LA_CARTE" name="À la carte">
+    <rule name="à la carte" id="A_LA_CARTE">
       <pattern>
           <token>à</token>
           <token>la</token>
@@ -1797,14 +1760,14 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="BIG_BEN" name="Big Ben">
+    <rule name="Big Ben" id="BIG_BEN">
       <pattern>
           <token>Big</token>
           <token regexp="yes">Ben|Data|Bang</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PEU_A_PEU" name="Peu à peu">
+    <rule name="peu à peu" id="PEU_A_PEU">
       <pattern>
           <token>peu</token>
           <token>à</token>
@@ -1812,7 +1775,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="AVANT_LA_LETTRE" name="Avant la lettre">
+    <rule name="avant la lettre" id="AVANT_LA_LETTRE">
       <pattern>
           <token>avant</token>
           <token>la</token>
@@ -1820,7 +1783,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="COQ_AU_VIN" name="Coq au Vin">
+    <rule name="Coq au Vin" id="COQ_AU_VIN">
       <pattern>
           <token>Coq</token>
           <token>au</token>
@@ -1828,35 +1791,35 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="AIR_FORCE" name="Air Force">
+    <rule name="Air Force" id="AIR_FORCE">
       <pattern>
           <token>Air</token>
           <token>Force</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="CUI_BONO" name="Cui bono">
+    <rule name="cui bono" id="CUI_BONO">
       <pattern>
           <token>Cui</token>
           <token>Bono</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="MEMENTO_MORI" name="Memento mori">
+    <rule name="Memento mori" id="MEMENTO_MORI">
       <pattern>
           <token>Memento</token>
           <token>mori</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SALVA_VERITATE" name="Salva veritate">
+    <rule name="salva veritate" id="SALVA_VERITATE">
       <pattern>
           <token>salva</token>
           <token>veritate</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PERSONA_NON_GRATA" name="Persona non grata">
+    <rule name="Persona non grata" id="PERSONA_NON_GRATA">
       <pattern>
           <token>Persona</token>
           <token min="0">non</token>
@@ -1864,42 +1827,42 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ENFANT_TERRIBLE" name="Enfant terrible">
+    <rule name="Enfant terrible" id="ENFANT_TERRIBLE">
       <pattern>
           <token>Enfant</token>
           <token>terrible</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="FAIR_PLAY" name="Fair Play">
+    <rule name="Fair Play" id="FAIR_PLAY">
       <pattern case_sensitive="yes">
           <token>Fair</token>
           <token>Play</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="UNIVERSITY_OF" name="University of">
+    <rule name="University of" id="UNIVERSITY_OF">
       <pattern case_sensitive="yes">
           <token>University</token>
           <token>of</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="YAD_VASHEM" name="Yad Vashem">
+    <rule name="Yad Vashem" id="YAD_VASHEM">
       <pattern>
           <token>Yad</token>
           <token>Vashem</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="EL_NINO" name="El Niño">
+    <rule name="El Niño" id="EL_NINO">
       <pattern>
           <token>El</token>
           <token>Niño</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="IN_MEDIAS_RES" name="In medias res">
+    <rule name="in medias res" id="IN_MEDIAS_RES">
       <pattern>
           <token>in</token>
           <token>medias</token>
@@ -1907,42 +1870,42 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="FACULTAS_DOCENDI" name="Facultas Docendi">
+    <rule name="Facultas Docendi" id="FACULTAS_DOCENDI">
       <pattern>
           <token>Facultas</token>
           <token>Docendi</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="VENIA_LEGENDI" name="Venia Legendi">
+    <rule name="Venia Legendi" id="VENIA_LEGENDI">
       <pattern>
           <token>Venia</token>
           <token>Legendi</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="GRAND_CANYON" name="Grand Canyon">
+    <rule name="Grand Canyon" id="GRAND_CANYON">
       <pattern>
           <token>Grand</token>
           <token regexp='yes'>Canyon|Prix|Slam</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="HORRIBILE_DICTU" name="Horribile dictu">
+    <rule name="horribile dictu" id="HORRIBILE_DICTU">
       <pattern>
           <token>horribile</token>
           <token>dictu</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="DIABETES_MELLITUS" name="Diabetes mellitus">
+    <rule name="Diabetes mellitus" id="DIABETES_MELLITUS">
       <pattern>
           <token>Diabetes</token>
           <token regexp="yes">mellitus|renalis|insipidus</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="O_BLITZ" name="O Blitz">
+    <rule name="O Blitz" id="O_BLITZ">
       <pattern>
           <token regexp="yes">[dn]?o</token>
           <token regexp="yes">Blitz|Donner</token>
@@ -1950,28 +1913,28 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="WALL_STREET" name="Wall Street">
+    <rule name="Wall Street" id="WALL_STREET">
       <pattern>
           <token regexp="yes">Wall|Downing|Baker</token>
           <token>Street</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="FIFTH_AVENUE" name="Fifth Avenue">
+    <rule name="Fifth Avenue" id="FIFTH_AVENUE">
       <pattern>
           <token>Fifth</token>
           <token>Avenue</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PER_SE" name="Per se">
+    <rule name="per se" id="PER_SE">
       <pattern>
           <token>per</token>
           <token regexp="yes">capita|procura|rectum|saldo|se</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="POUR_LE_MERITE" name="Pour le Mérite">
+    <rule name="Pour le Mérite" id="POUR_LE_MERITE">
       <pattern>
           <token>Pour</token>
           <token>le</token>
@@ -1979,14 +1942,14 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SUI_GENERIS" name="Sui">
+    <rule name="sui" id="SUI_GENERIS">
       <pattern>
           <token>sui</token>
           <token>generis</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PACTA_SUNT_SERVANDA" name="Pacta">
+    <rule name="pacta" id="PACTA_SUNT_SERVANDA">
       <pattern>
           <token>pacta</token>
           <token>sunt</token>
@@ -1994,21 +1957,21 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="VIRTUAL_REALITY" name="Virtual">
+    <rule name="virtual" id="VIRTUAL_REALITY">
       <pattern>
           <token>Virtual</token>
           <token regexp="yes">Reality|Environments?</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="GUELEN" name="Fethullah Gülen">
+    <rule name="Fethullah Gülen" id="GUELEN">
       <pattern>
           <token>Fethullah</token>
           <token regexp='yes'>Gülens?</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ERDOGAN" name="Recep Tayyip Erdoğan">
+    <rule name="Recep Tayyip Erdoğan" id="ERDOGAN">
       <pattern>
           <token>Recep</token>
           <token>Tayyip</token>
@@ -2016,49 +1979,49 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="HILLARY_CLINTON" name="Hillary Clinton">
+    <rule name="Hillary Clinton" id="HILLARY_CLINTON">
       <pattern>
           <token regexp='yes'>Hillary|Bill</token>
           <token regexp='yes'>Clintons?</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ABU_DHABI" name="Abu">
+    <rule name="Abu" id="ABU_DHABI">
       <pattern>
           <token>Abu</token>
           <token>Dhabi</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ROCKY_MOUNTAINS" name="Rocky Mountains">
+    <rule name="Rocky Mountains" id="ROCKY_MOUNTAINS">
       <pattern>
           <token>Rocky</token>
           <token>Mountains</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="CORDON_BLEU" name="Cordon bleu">
+    <rule name="Cordon bleu" id="CORDON_BLEU">
       <pattern>
           <token>Cordon</token>
           <token>bleu</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="JOUR_FIXE" name="Jour fixe">
+    <rule name="Jour fixe" id="JOUR_FIXE">
       <pattern>
           <token regexp="yes">Blanc|Jour|Idée</token>
           <token>fixe</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PEARL_HARBOR" name="Pearl Harbor">
+    <rule name="Pearl Harbor" id="PEARL_HARBOR">
       <pattern>
           <token>Pearl</token>
           <token>Harbor</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="ISLE_OF_MAN" name="Isle of Man">
+    <rule name="Isle of Man" id="ISLE_OF_MAN">
       <pattern>
           <token>Isle</token>
           <token>of</token>
@@ -2066,7 +2029,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="HUMAN_RIGHTS_WATCH" name="Human Rights Watch">
+    <rule name="Human Rights Watch" id="HUMAN_RIGHTS_WATCH">
       <pattern>
           <token>Human</token>
           <token>Rights</token>
@@ -2074,28 +2037,28 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PATER_FAMILIAS" name="Pater familias">
+    <rule name="pater familias" id="PATER_FAMILIAS">
       <pattern>
           <token>pater</token>
           <token>familias</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="CON_CARNE" name="Con Carne">
+    <rule name="con Carne" id="CON_CARNE">
       <pattern case_sensitive="yes">
           <token>con</token>
           <token>Carne</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SCOTLAND_YARD" name="Scotland Yard">
+    <rule name="Scotland Yard" id="SCOTLAND_YARD">
       <pattern case_sensitive="yes">
           <token>Scotland</token>
           <token>Yard</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="BUCKINGHAM_PALACE" name="Buckingham Palace">
+    <rule name="Buckingham Palace" id="BUCKINGHAM_PALACE">
       <pattern>
           <token>Palácio</token>
           <token>de</token>
@@ -2103,28 +2066,28 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="PARKS" name="Parks">
+    <rule name="Parks" id="PARKS">
       <pattern case_sensitive="yes">
           <token regexp="yes">Central|Hyde</token>
           <token>Park</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="TERRA_INCOGNITA" name="Terra incognita">
+    <rule name="Terra incognita" id="TERRA_INCOGNITA">
       <pattern>
           <token>Terra</token>
           <token>incognita</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="NON_SEQUITUR" name="Non sequitur">
+    <rule name="non sequitur" id="NON_SEQUITUR">
       <pattern>
           <token>non</token>
           <token>sequitur</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="REDUCTIO_AD_ABSURDUM" name="Reductio ad absurdum">
+    <rule name="reductio ad absurdum" id="REDUCTIO_AD_ABSURDUM">
       <pattern>
           <token>reductio</token>
           <token>ad</token>
@@ -2132,7 +2095,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="TERTIUM_NON_DATUR" name="Tertium non datur">
+    <rule name="Tertium non datur" id="TERTIUM_NON_DATUR">
       <pattern>
           <token>Tertium</token>
           <token>non</token>
@@ -2140,21 +2103,21 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="EX_NIHILO" name="Ex nihilo">
+    <rule name="ex nihilo" id="EX_NIHILO">
       <pattern>
           <token>ex</token>
           <token>nihilo</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SUUM_CUIQUE" name="Suum cuique">
+    <rule name="suum cuique" id="SUUM_CUIQUE">
       <pattern>
           <token>suum</token>
           <token>cuique</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="URBI_ORBI" name="Urbi et orbi">
+    <rule name="Urbi et orbi" id="URBI_ORBI">
       <pattern>
           <token>Urbi</token>
           <token>et</token>
@@ -2162,14 +2125,14 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SPIRITUS_RECTOR" name="Spiritus Rector">
+    <rule name="Spiritus Rector" id="SPIRITUS_RECTOR">
       <pattern>
           <token>Spiritus</token>
           <token>Rector</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="VINO_VERITAS" name="In vino veritas">
+    <rule name="in vino veritas" id="VINO_VERITAS">
       <pattern>
           <token>in</token>
           <token>vino</token>
@@ -2177,7 +2140,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="VENIA_VERBO" name="Sit venia verbo">
+    <rule name="sit venia verbo" id="VENIA_VERBO">
       <pattern>
           <token>sit</token>
           <token>venia</token>
@@ -2185,7 +2148,7 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="SEX_CITY" name="Sex and the City">
+    <rule name="Sex and the City" id="SEX_CITY">
       <pattern>
           <token>Sex</token>
           <token>and</token>
@@ -2194,34 +2157,34 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="BREAKING_BAD" name="Breaking Bad">
+    <rule name="Breaking Bad" id="BREAKING_BAD">
       <pattern>
           <token>Breaking</token>
           <token>Bad</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="VISUAL_STUDIO" name="Visual Studio/Basic">
+    <rule name="Visual Studio/Basic" id="VISUAL_STUDIO">
       <pattern case_sensitive="yes">
           <token>Visual</token>
           <token regexp="yes">Studio|Basic</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="GOOGLE_MAPS" name="Google Maps">
+    <rule name="Google Maps" id="GOOGLE_MAPS">
       <pattern case_sensitive="yes">
           <token>Google</token>
           <token regexp="yes">Ad|Alerts|Analytics|APIs|App|Apps|Art|Attribution|Authenticator|Bookmarks|Business|Calendar|Charts|Checkout|Classroom|Cloud|Compute|Contacts|Cultural|Current|Data|Developers|Docs|Drive|Fit|Flights|Fonts|for|Fusion|Get|Groups|Home|Maps|Mobile|Moderator|My|Ngram|One|Opinion|Photos|Play|Plugin|Primer|Public|Questions|Schemer|Scholar|Search|Search‎|Shopping|Sites|Spaces|Store|Street|Surveys|Sync|Tez|Translate|Translator|URL|Videos|Wallet|Website|WiFi</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="Ampersands" name="AMPERSANDS">
+    <rule name="AMPERSANDS" id="Ampersands">
       <pattern>
           <token regexp='yes'>C&amp;A|I&amp;D|S&amp;P</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="LOW_COST" name="Low cost">
+    <rule name="low cost" id="LOW_COST">
       <pattern>
           <token>low</token>
           <token regexp="yes" spacebefore='no' min='0'>&hifen;</token>
@@ -2229,20 +2192,11 @@
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
-    <rule id="T-SHIRT" name="T-shirts">
+    <rule name="T-shirts" id="T-SHIRT">
       <pattern>
           <token>t</token>
           <token regexp="yes" spacebefore='no'>&hifen;</token>
           <token regexp="yes" spacebefore='no'>shirts?</token>
-      </pattern>
-      <disambig action="ignore_spelling"/>
-    </rule>
-    <rule id="STAND-UP_COMEDY" name="Stand-up comedy">
-      <pattern>
-          <token>stand</token>
-          <token regexp="yes" spacebefore='no'>&hifen;</token>
-          <token spacebefore='no'>up</token>
-          <token regexp="yes">comed(y|ies)</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>
@@ -2274,7 +2228,7 @@
       <disambig action="ignore_spelling"/>
     </rule>
 
-  <rulegroup id="SPELLING_IGNORE_RULE" name="Ignore spellings rule">
+  <rulegroup name="Ignore spellings rule" id="SPELLING_IGNORE_RULE">
     <!-- Created by Tiago F. Santos, Portuguese rule, 2017-06-XX  	-->
     <rule>
       <pattern>
@@ -2308,16 +2262,6 @@
           <token case_sensitive="yes" regexp="yes">\p{Lu}</token>
         </marker>
           <token spacebefore='no'>.</token>
-      </pattern>
-      <disambig action="ignore_spelling"/>
-    </rule>
-    <rule><!-- apostrophes -->
-      <pattern>
-        <marker>
-          <token regexp="yes">[dn]</token>
-          <token spacebefore='no' regexp="yes">['’‘]</token>
-        </marker>
-          <token spacebefore='no' regexp="yes">[^bcdfghjklmnpqrstvwxyz]\w+</token>
       </pattern>
       <disambig action="ignore_spelling"/>
     </rule>

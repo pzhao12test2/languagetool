@@ -19,6 +19,7 @@
 package org.languagetool.rules.de;
 
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.Language;
@@ -33,6 +34,8 @@ import org.languagetool.rules.WordRepeatRule;
  * @author Daniel Naber
  */
 public class GermanWordRepeatRule extends WordRepeatRule {
+
+  private static final Pattern PREPOSITIONS = Pattern.compile("a[bn]|auf|bei|durch|für|in|mit|nach|ohne|über|vo[nr]|zu");
 
   public GermanWordRepeatRule(ResourceBundle messages, Language language) {
     super(messages, language);
@@ -89,7 +92,7 @@ public class GermanWordRepeatRule extends WordRepeatRule {
   }
 
   private boolean isPreposition(AnalyzedTokenReadings token) {
-    return token.hasPosTagStartingWith("PRP:");
+    return PREPOSITIONS.matcher(token.getToken()).matches();
   }
 
 }

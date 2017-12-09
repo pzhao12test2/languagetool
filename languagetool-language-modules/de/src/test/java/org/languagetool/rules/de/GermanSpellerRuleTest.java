@@ -194,11 +194,6 @@ public class GermanSpellerRuleTest {
     assertFirstSuggestion("WiFi-Direkt", "Wi-Fi Direct", rule, lt);
     assertFirstSuggestion("Wi-Fi-Direct", "Wi-Fi Direct", rule, lt);
     assertFirstSuggestion("hofen", "hoffen", rule, lt);
-    assertFirstSuggestion("frustuck", "Frühstück", rule, lt);
-    assertFirstSuggestion("recourcen", "Ressourcen", rule, lt);
-    assertFirstSuggestion("familliarisches", "familiäres", rule, lt);
-    assertFirstSuggestion("sommerverie", "Sommerferien", rule, lt);
-    assertFirstSuggestion("thelepatie", "Telepathie", rule, lt);
   }
 
   @Test
@@ -247,7 +242,6 @@ public class GermanSpellerRuleTest {
     assertEquals(0, rule.match(lt.getAnalyzedSentence("Bund-Länder-Kommission")).length);
     assertEquals(0, rule.match(lt.getAnalyzedSentence("Des World Wide Webs")).length); // expanded multi-word entry from spelling.txt
     assertEquals(0, rule.match(lt.getAnalyzedSentence("Der westperuanische Ferienort.")).length);
-    assertEquals(0, rule.match(lt.getAnalyzedSentence("„Pumpe“-Nachfolge")).length);
 
     assertEquals(1, rule.match(lt.getAnalyzedSentence("Miet und Zinseinkünfte")).length);
     assertEquals(1, rule.match(lt.getAnalyzedSentence("Stil- und Grammatik gut")).length);

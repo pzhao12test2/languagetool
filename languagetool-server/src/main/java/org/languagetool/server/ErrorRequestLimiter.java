@@ -30,7 +30,7 @@ class ErrorRequestLimiter extends RequestLimiter {
    * @param requestLimitPeriodInSeconds the time period over which requests are considered, in seconds
    */
   ErrorRequestLimiter(int requestLimit, int requestLimitPeriodInSeconds) {
-    super(requestLimit, 0, requestLimitPeriodInSeconds);
+    super(requestLimit, requestLimitPeriodInSeconds);
   }
 
   /**
@@ -38,12 +38,7 @@ class ErrorRequestLimiter extends RequestLimiter {
    * @return true if access is allowed because the request limit is not reached yet
    */
   boolean wouldAccessBeOkay(String ipAddress) {
-    try {
-      checkLimit(ipAddress);
-      return true;
-    } catch (TooManyRequestsException e) {
-      return false;
-    }
+    return !limitReached(ipAddress);
   }
   
   /**
@@ -53,7 +48,7 @@ class ErrorRequestLimiter extends RequestLimiter {
     while (requestEvents.size() > REQUEST_QUEUE_SIZE) {
       requestEvents.remove(0);
     }
-    requestEvents.add(new RequestEvent(ipAddress, new Date(), 0));
+    requestEvents.add(new RequestEvent(ipAddress, new Date()));
   }
   
 }

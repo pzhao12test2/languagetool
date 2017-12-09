@@ -125,7 +125,7 @@ public class SimpleReplaceDNVRule extends AbstractSimpleReplaceRule {
           possibleReplacements.addAll(Arrays.asList(synthesized));
         }
         if (possibleReplacements.size() > 0) {
-          RuleMatch potentialRuleMatch = createRuleMatch(tokens[i], possibleReplacements, sentence);
+          RuleMatch potentialRuleMatch = createRuleMatch(tokens[i], possibleReplacements);
           ruleMatches.add(potentialRuleMatch);
         }
       }

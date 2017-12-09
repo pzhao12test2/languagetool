@@ -408,7 +408,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         
         
         <rulegroup id="uroven_uvelichilsja" name="Логические ошибки «уровень повысился/увеличился»">
-            <!--  <token min="0" max="3"></token> - реализовано другим способом skip="3"-->          
+            <!-- TODO:   добавить    <token min="0" max="3"></token> - исправлено другим способом skip="3"-->          
             <rule> 
                 <pattern>
                     <token skip="3">уровень</token>
@@ -2200,6 +2200,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <rulegroup default="on" id="Genitsya" name="«Жениться»/«выйти замуж»">
             <rule>
                 <pattern case_sensitive="no">
+                    <!--          -->
                     <token>он</token>
                     <token>вышел</token>
                     <token>замуж</token>
@@ -2214,6 +2215,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             </rule>
             <rule>
                 <pattern case_sensitive="no">
+                    <!--          -->
                     <token postag="NN:.*:Masc:Sin:.*" postag_regexp="yes"></token>  
                     <token>вышел</token>
                     <token>замуж</token>
@@ -2227,6 +2229,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             
             <rule>
                 <pattern case_sensitive="no">
+                    <!--          -->
                     <token>она</token>
                     <token>женилась</token>
                 </pattern>
@@ -2238,6 +2241,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             </rule>
             <rule>
                 <pattern case_sensitive="no">
+                    <!--          -->
                     <token postag="NN:.*:Fem:Sin:.*" postag_regexp="yes"></token>  
                     <token>женилась</token>    
                 </pattern>
@@ -2250,94 +2254,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         </rulegroup>                   
     </category>
     
-    <category id="PUNCTUATION" name="Пунктуация">     
-        <rulegroup id="PUNCT_DPT" name="Запятые при деепричасти и деепричастном обороте">
-            <rule>
-                <pattern>
-                    <token postag="PNN:.*|NN:.*:.*:.*:Nom" postag_regexp="yes"></token>
-                    <token postag="DPT:.*" postag_regexp="yes"><exception  postag="DPT:.*" postag_regexp="yes" negate_pos="yes"/></token>
-                    <token postag="VB:.*" postag_regexp="yes"></token>
-                </pattern>
-                <message>Деепричастие и деепричастный оборот выделяются запятыми: <suggestion>\1, \2, \3</suggestion>.</message>
-                <url>http://new.gramota.ru/spravka/rules/151-zap-19-32</url>
-                <short>Запятые при деепричастном обороте</short>
-                <example correction="Он, улыбаясь, шёл"><marker>Он улыбаясь шёл</marker> вперёд.</example>
-                <example>Он, улыбаясь, шёл вперёд.</example>
-                <example>Он молча уставился на НЛО.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token postag="VB:.*" postag_regexp="yes"></token>
-                    <token>,</token>
-                    <token postag="DPT:.*" postag_regexp="yes"></token>
-                    <token>.</token>
-                </pattern>
-                <message>Запятая не нужна, одиночное деепричастие в конце предложения выступает в роли наречия: <suggestion>\1 \3\4</suggestion>.</message>
-                <url>http://new.gramota.ru/spravka/rules/151-zap-19-32</url>
-                <short>Запятая не нужна</short>
-                <example correction="шёл улыбаясь.">Он <marker>шёл, улыбаясь.</marker></example>
-            </rule>
-        </rulegroup>
-        <rulegroup id="PUNCT_VB_INF_OBOROT" name="Запятые при обстоятельственном обороте">
-            <rule>
-            <!-- Оборот с неопределенной формой глагола со всеми относящимися к ней словами,
-            присоединёнными союзами чтобы (чтоб), для того чтобы (чтоб), с тем чтобы (чтоб) и т. п. выделяется запятыми. -->    
-               <antipattern> 
-                    <token regexp="yes">для|с|вместо</token>
-                    <marker>
-                        <token regexp="yes">того|тем</token>
-                        <token regexp="yes">чтобы|чтоб</token>
-                        <token postag="VB:INF:"></token>
-                    </marker>
-                </antipattern>
-                 <antipattern>
-                    <marker>
-                        <token>только</token>
-                        <token regexp="yes">чтобы|чтоб</token>
-                        <token postag="VB:INF:"></token>
-                    </marker>
-                </antipattern>
-                <pattern>
-                    <token><exception regexp="yes">,|;</exception><exception postag="SENT_START"></exception></token>
-                    <token regexp="yes">чтобы|чтоб</token>
-                    <token postag="VB:INF:"></token>
-                </pattern>
-                <message>Оборот с неопределенной формой глагола со всеми относящимися к ней словами, присоединёнными союзами «чтобы/чтоб»: <suggestion>\1, \2 \3</suggestion>.</message>
-                <url>http://new.gramota.ru/spravka/rules/151-zap-19-32</url>
-                <short>Запятые при обстоятельственном обороте</short>
-                <example correction="крыльцо, чтобы освежиться">Я вышел на <marker>крыльцо чтобы освежиться</marker>.</example>
-                <example>Я вышел на крыльцо, чтобы освежиться.</example>
-                <example>Врагам понадобилось почти 10 месяцев, только чтобы захватить город.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token><exception regexp="yes">,|;</exception><exception postag="SENT_START"></exception></token>
-                    <token>только</token>
-                    <token regexp="yes">чтобы|чтоб</token>
-                    <token postag="VB:INF:"></token>
-                </pattern>
-                <message>Оборот с неопределенной формой глагола со всеми относящимися к ней словами, присоединёнными союзами «чтобы/чтоб»: <suggestion>\1, \2 \3 \4</suggestion>.</message>
-                <url>http://new.gramota.ru/spravka/rules/151-zap-19-32</url>
-                <short>Запятые при обстоятельственном обороте</short>
-                <example correction="крыльцо, только чтобы освежиться">Я вышел на <marker>крыльцо только чтобы освежиться</marker>.</example>
-                <example>Я вышел на крыльцо, только чтобы освежиться.</example>
-                <example>Врагам понадобилось почти 10 месяцев, только чтобы захватить город.</example>
-            </rule>
-            <rule>
-                <pattern>
-                    <token><exception regexp="yes">,|;</exception><exception postag="SENT_START"></exception></token>
-                    <token regexp="yes">для|с|вместо</token>
-                    <token regexp="yes">того|тем</token>
-                    <token regexp="yes">чтобы|чтоб</token>
-                    <token postag="VB:INF:"></token>
-                </pattern>
-                <message>Оборот с неопределенной формой глагола со всеми относящимися к ней словами, присоединёнными союзами «для того чтобы, с тем чтоб»: <suggestion>\1, \2 \3 \4 \5</suggestion>.</message>
-                <url>http://new.gramota.ru/spravka/rules/151-zap-19-32</url>
-                <short>Запятые при обстоятельственном обороте</short>
-                <example correction="крыльцо, для того чтобы освежиться">Я вышел на <marker>крыльцо для того чтобы освежиться</marker>.</example>
-                <example>Я вышел на крыльцо, для того чтобы освежиться.</example>
-            </rule>         
-        </rulegroup>
+    <category id="PUNCTUATION" name="Пунктуация">
         <rulegroup default="on" id="Verb_comma_Verb" name="Глаголы как однородные члены предложения">
             <!-- TODO Another example: "Он шёл по улице говорил по телефону" Correction: "Он шёл по улице и говорил по телефону" or "Он шёл по улице, говорил по телефону".  -->
             <rule>    
@@ -6521,6 +6438,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example>Соревнования за место в команде.</example>
                 <example correction="заместо">Это новое оборудование можно  использовать <marker>за место</marker> старого.</example>
             </rule>
+            <!--TODO: навстречу   -->
             <rule>
                 <!--насчёт   -->      
                 <pattern case_sensitive="no">
@@ -6537,6 +6455,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example>Деньги переведены <marker>на счёт</marker> 00000000000000.</example>
                 <example>Деньги переведены <marker>на счёт</marker> Visa 11111111111111.</example>
                 <example>Деньги переведены <marker>на счёт</marker> поставщика.</example>
+       <!--     <example>Я иду <marker>на встречу</marker> с другом.</example>
+                <example correction="навстречу">Они шли <marker>на встречу</marker> друг другу.</example>  -->
                 <example correction="насчёт">Тебе следует быть осторожным <marker>на счёт</marker> того, чтобы пойти в поход.</example>
             </rule>
             <rule>
@@ -6656,6 +6576,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <short>Пишется слитно.</short>
                 <example correction="заранее">Он прибыл на станцию <marker>за ранее</marker>.</example>
             </rule>
+            
+            
+            
             <rule>
                 <!-- поверх, подо, помимо              
                 -->
@@ -6671,7 +6594,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <marker>По мимо</marker> чисто игровых проблем на ситуацию в таблице могут влиять и различные нюансы.</example>
             </rule>
             <rule>
-                <!-- невзирая на, несмотря на -->
+                <!-- невзирая на, несмотря на               
+                -->
                 <pattern case_sensitive="no">
                     <token>не</token>
                     <token regexp="yes">взирая|смотря</token>
@@ -6682,36 +6606,32 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example correction="несмотря на">Премия в этом году состоялась <marker>не смотря на</marker> кризис.</example>
                 <example correction="невзирая на">Премия в этом году состоялась <marker>не взирая на</marker> кризис.</example>
             </rule>
-           
+            
             <rule>
-                <!-- навстречу/ на встречу   -->
+                <!-- навстречу/ на встречу               
+                -->
                 <pattern case_sensitive="no">
                     <token>навстречу</token>
                     <token>с</token>
                 </pattern>
                 <message>Пишется раздельно: <suggestion>на встречу \2</suggestion>.</message>
                 <short>Пишется раздельно.</short>
-                <example correction="на встречу с">Я иду <marker>навстречу с</marker> искусством.</example>
+                <example correction="на встречу с">Я иду  <marker>навстречу с</marker> искусством.</example>
                 <example>Я иду на встречу с искусством.</example>
-                <example>Я иду на встречу с другом.</example>
             </rule>
             <rule>
                 <pattern case_sensitive="no">
-                    <marker>
-                        <token>на</token>
-                        <token>встречу</token>
-                    </marker>
-                    <or>
-                        <token postag_regexp="yes" postag=".*.:.*:.*:D"></token>
-                        <token>друг</token>
-                    </or>
+                    <token>на</token>
+                    <token>встречу</token>
+                    <token postag_regexp="yes" postag=".*.:.*:.*:D"></token>
                 </pattern>
-                <message>Пишется слитно: <suggestion>навстречу</suggestion>.</message>
+                <message>Пишется слитно: <suggestion>навстречу \3</suggestion>.</message>
                 <short>Пишется слитно.</short>
-                <example correction="навстречу">Я иду <marker>на встречу</marker> движению.</example>
+                <example correction="навстречу движению">Я иду  <marker>на встречу движению</marker>.</example>
                 <example>Я иду навстречу движению.</example>
-                <example correction="навстречу">Они шли <marker>на встречу</marker> друг другу.</example>
-            </rule>        
+            </rule>
+            
+            
         </rulegroup>
         <rulegroup id="TO_JE" name="Правописание «тоже/то же»">
           <rule>

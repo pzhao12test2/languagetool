@@ -22,8 +22,6 @@ bell-hops+
 bottle-neck+
 bottle-necks+
 breech-loader+
-cork-screw+
-cork-screws+
 cut-throats+
 die-hards+
 drop-head+

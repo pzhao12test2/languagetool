@@ -35,15 +35,9 @@ import static org.junit.Assert.*;
 public class RuleMatchesAsJsonSerializerTest {
 
   private final RuleMatchesAsJsonSerializer serializer = new RuleMatchesAsJsonSerializer();
-  
   private final List<RuleMatch> matches = Arrays.asList(
-          new RuleMatch(new FakeRule(),
-          new JLanguageTool(Languages.getLanguageForShortCode("xx")).getAnalyzedSentence("This is an test sentence."),
-          1, 3, "My Message, use <suggestion>foo</suggestion> instead", "short message")
+          new RuleMatch(new FakeRule(), 1, 3, "My Message, use <suggestion>foo</suggestion> instead", "short message")
   );
-
-  public RuleMatchesAsJsonSerializerTest() throws IOException {
-  }
 
   @Test
   public void testJson() {
@@ -62,7 +56,6 @@ public class RuleMatchesAsJsonSerializerTest {
     assertContains("\"http://foobar.org/blah\"", json);
     assertContains("\"addition\"", json);
     assertContains("\"short message\"", json);
-    assertContains("\"sentence\":\"This is an test sentence.\"", json);
   }
 
   private void assertContains(String expectedSubstring, String json) {

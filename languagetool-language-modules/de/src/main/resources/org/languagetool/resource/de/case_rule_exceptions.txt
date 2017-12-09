@@ -36,7 +36,6 @@ die Hohe Pforte|Schule
 der Hohen Pforte|Schule
 des Himmlischen Friedens
 Deutschen? Museums?
-(Deutsche[nr]?|Belgische[nr]?) Schäferhund(en?)?
 Digital Video
 (Dreißig|Hundert|Sieben)jährigen? Kriege?s?
 Dritten? Welt
@@ -54,7 +53,7 @@ Eisernen? Kreuze|Vorhangs?
 Erste[rn]? Mai|Liga
 Erste[rnm]? Weltkriege?s?
 Essener
-Europäischen? Fonds|(Atomg|G)emeinschaft|Parlamente?s?|Union|Gerichtshof(es|s)?|Patentamt(es|s)?|Wirtschaftsgemeinschaft|Kommission|Rat(es|s)?|Zentralbank|Menschenrechtskonvention|Agentur|Arzneimittel-?[aA]gentur|Volkspartei
+Europäischen? Fonds|(Atomg|G)emeinschaft|Parlamente?s?|Union|Gerichtshof(es|s)?|Patentamt(es|s)?|Wirtschaftsgemeinschaft|Kommission|Rat(es|s)?|Zentralbank|Menschenrechtskonvention|Agentur|Arzneimittel-?[aA]gentur
 Ewige[rn]? Stadt
 Fast Food
 Ferne[rn]? Ostens?
@@ -105,7 +104,7 @@ Indischen Ozeans
 Indische[nr]? Ozean
 Inneren? Medizin|Gürtel|Mongolei
 Inoffizielle[rn]? Mitarbeiter[sn]?
-Internationalen? Filmfestspielen?|Atomenergie(-Organisation|behörde|organisation)|Fernmeldeunion|Komitees?|.*tag|Raumstation
+Internationalen? Filmfestspielen?|Atomenergie(-Organisation|behörde|organisation)|Fernmeldeunion|Komitees?|.*tag
 Internationale[mnr]? Währungsfonds|(Seeg|Strafg|Sportg|Militärg|G)erichtshofs?
 Internationalen (Seeg|Strafg|Sportg|Militärg|G)erichtshofe?s
 Internationale[ns]? Olympische[ns]? Komitees?
@@ -141,6 +140,8 @@ Mittwochfrüh
 Muttersprachler[ns]?
 Nahe[nr]? Ostens?
 Nationale[nr]? Sicherheitsrat(e?s)?|Volksarmee
+Neue[nr]? Welt|Markt
+Neuen? Testaments?|Rundschau
 Niels Bohr
 Norddeutsche[nr]? Bund(e?s)?
 Obersten Gerichtshofe?s

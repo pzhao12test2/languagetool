@@ -5054,8 +5054,6 @@ Berlin-Tegel
 Bernabéu
 BES
 BI
-bifidobactéria
-bifidobactérias
 bioanalítica
 bioanalíticas
 bioanalítico
@@ -5083,8 +5081,6 @@ BlackBerry
 blaugrana
 blaugranas
 blefarite
-blockchain
-blockchains
 Boavida
 bodyboarder
 bodyboarders
@@ -5158,7 +5154,6 @@ causídico
 causídicoS
 CCAMLR
 CCDR
-Cepsa
 cervicalgia
 cervicalgias
 Cervidae
@@ -5183,7 +5178,6 @@ circadiano
 circadianos
 cleptocracia
 cleptocracias
-Clix
 cloud
 CMYK
 Cointrin
@@ -5205,8 +5199,6 @@ CPUs
 Creutzfeldt-Jakob
 criomicroscopia
 criomicroscopias
-criptomoeda
-criptomoedas
 cronobióloga
 cronobiólogas
 cronobiólogo
@@ -5222,7 +5214,6 @@ CUDA
 Cusco
 cyberbullying
 DARPA
-Dash
 DDR
 Deadpool
 DECIF
@@ -5264,7 +5255,6 @@ diverticulite
 divertículo
 divertículos
 DN
-Dogecoin
 dominatrix
 dominatrixes
 Donald
@@ -5308,7 +5298,6 @@ enterocolites
 enurese
 éon
 éons
-EOS
 ERC
 Ericsson
 eritreu
@@ -5318,8 +5307,6 @@ ERSE
 erúcico
 ESAP
 escabiose
-escapulário
-escapulários
 esclera
 escleras
 esclerodermia
@@ -5362,7 +5349,6 @@ Esther
 estromatólito
 estromatólitos
 ET
-Ethereum
 EUAC
 eufemística
 eufemísticas
@@ -5412,8 +5398,6 @@ fibroblastos
 fibropapiloma
 fibropapilomas
 Firefox
-firmware
-firmwares
 Fiumicino
 folhosa
 folhosas
@@ -5440,11 +5424,9 @@ futurística
 futurísticas
 futurístico
 futurísticos
-Galp
 gangue
 gangues
 gargalestesia
-Gasprocar
 gastroenterologista
 gastroenterologistas
 Gatwick
@@ -5452,10 +5434,6 @@ GDDR
 GeForce
 géis
 Generalitat
-geoestratégica
-geoestratégicas
-geoestratégico
-geoestratégicos
 geomagnética
 geomagnéticas
 geomagnético
@@ -5475,7 +5453,6 @@ GLONASS
 glossite
 glossites
 GMT
-GNL
 gonococo
 gonococos
 GoPro
@@ -5497,7 +5474,6 @@ halitoses
 Haneda
 Hannah
 Hartsfield
-Hassan
 Hatshepsut
 HDMI
 HDR
@@ -5541,7 +5517,6 @@ hipercalórico
 hipercalóricos
 hipercolesterolemia
 hiperglicemia
-hiperinflação
 hipertricose
 hipertricoses
 hipocondria
@@ -5567,7 +5542,6 @@ ICBAS
 ICN
 ICNB
 ICNF
-IDEB
 IEEE
 IFPA
 IGAI
@@ -5588,8 +5562,6 @@ incredulamente
 independentismo
 índigo
 índigos
-indutivista
-indutivistas
 INETI
 Infarmed
 infra-alar
@@ -5622,7 +5594,6 @@ intocados
 intramatrimoniais
 intramatrimonial
 IOT
-IOTA
 iPad
 iPads
 IPO
@@ -5652,8 +5623,6 @@ iTunes
 IUC
 IUCS
 IUM
-Jefferson
-Jennifer
 Jeremy
 jetpack
 jetpacks
@@ -5677,8 +5646,6 @@ Kruger
 Kubitschek
 lacertídeo
 lacertídeos
-lactobacilo
-lactobacilos
 lagomorfo
 lagomorfos
 Lamborghini
@@ -5691,7 +5658,6 @@ Lehman
 Leicester
 leirão
 leirões
-Leléu
 LG
 limiana
 limianas
@@ -5703,13 +5669,10 @@ lingueirão
 lingueirões
 linogravura
 linogravuras
-Litecoin
 liturgicamente
 Liverpool
 LiveStrong
 Logan
-LP
-LPs
 LTE
 ludificação
 Luna
@@ -5790,7 +5753,6 @@ MITESS
 mix
 mixes
 MMO
-Monero
 monocarpelar
 monocarpelares
 monolocular
@@ -5845,10 +5807,6 @@ nocauteados
 nodularização
 nodularizações
 Norberto
-novata
-novatas
-novato
-novatos
 NOWO
 NRA
 NSA
@@ -5966,7 +5924,6 @@ premium
 prenha
 prenhas
 presbiopia
-Prio
 probiótica
 probióticas
 probiótico
@@ -5977,8 +5934,6 @@ psicomotricidade
 psilocibina
 psoríase
 Puigdemont
-pulsante
-pulsantes
 putativa
 putativas
 putativo
@@ -5993,7 +5948,6 @@ queratose
 queratoses
 quintilha
 quintilhas
-Rabat
 Rachel
 Radeon
 Rajastão
@@ -6015,23 +5969,18 @@ regulatórios
 remix
 remixes
 Renamo
-Repsol
 resveratrol
 RGB
 rinoceronte-de-java
 rinocerontes-de-java
-Ripple
 Ritz
 RMG
 RNAP
 robustamente
 roconpatia
 roconpatias
-Rolex
 Rorschach
 Roscosmos
-ROV
-ROVs
 Rousseau
 RSI
 Ruzyne
@@ -6042,8 +5991,6 @@ Saladino
 Samsung
 Sandman
 SARS
-satoshi
-satoshis
 saxitoxina
 Schott
 SciELO
@@ -6066,7 +6013,6 @@ sequenciadores
 Shakira
 Sheremetyevo
 SIG
-Simplex
 Sinatra
 SIPE
 Skype
@@ -6255,8 +6201,6 @@ XS
 XXL
 XXS
 Yahweh
-YouTuber
-Zcash
 zoofilia
 zoófilo
 zoófilos

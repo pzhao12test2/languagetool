@@ -110,20 +110,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <!-- Tippfehler -->
     <!-- ====================================================================== -->
     <category id="TYPOS" name="Mögliche Tippfehler">
-        <rule id="DE_KOMMA" name="de, (dem)">
-            <antipattern>
-                <token>.</token>
-                <token>de</token>
-                <token>,</token>
-            </antipattern>
-            <pattern>
-                <token>de</token>
-                <token>,</token>
-            </pattern>
-            <message>Meinten Sie <suggestion>dem</suggestion>?</message>
-            <example correction="dem">Wir kommen mit <marker>de,</marker> Plan gut voran.</example>
-            <example>Ich war auf heise.<marker>de,</marker> dort fanden die jährlichen Trollweltmeisterschaften statt.</example>
-        </rule>
         <rule id="EUCH_ALL" name="euch all (alle)">
             <pattern>
                 <token>euch</token>
@@ -3864,15 +3850,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example correction="werde">Falls ich dazu gezwungen <marker>erde</marker>, werde ich mich beschweren.</example>
             </rule>
         </rulegroup>
-        <rule id="GEROCHEN_GEBROCHEN" name="gerochen (gebrochen)">
-            <pattern>
-                <marker><token inflected="yes" case_sensitive="yes">gerochen</token></marker>
-                <token regexp="yes">&sprachadj1;|Arm|Bein</token>
-            </pattern>
-            <message>Meinten Sie <suggestion><match no="1" regexp_match="ger" regexp_replace="gebr"/></suggestion>?</message>
-            <example correction="gebrochenem">Er antwortete in <marker>gerochenem</marker> Englisch.</example>
-            <example correction="gebrochenes">Sein <marker>gerochenes</marker> Bein behindert ihn.</example>
-        </rule>
     </category>
 
     <!-- ====================================================================== -->
@@ -4086,7 +4063,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <short>Mögliche Wortverwechslung</short>
             <rule>
                 <pattern>
-                    <token regexp="yes">(To\-do\-)?Listen?|Checklisten?</token>
+                    <token regexp="yes">(To\-do\-)?Liste</token>
                     <marker>
                         <token inflected="yes">abhacken</token>
                     </marker>
@@ -4103,17 +4080,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 </pattern>
                 <message>Meinten Sie <suggestion><match no="1" regexp_match="äck" regexp_replace="äk"/></suggestion> (kleiner Haken)?</message>
                 <example correction="Häkchen">Ich habe ein <marker>Häckchen</marker> gesetzt.</example>
-            </rule>
-        </rulegroup>
-        <rulegroup id="LEITEND" name="leidend (leitend)">
-            <short>Mögliche Wortverwechslung</short>
-            <rule>
-                <pattern>
-                    <marker><token inflected="yes">leidend</token></marker>
-                    <token inflected="yes" regexp="yes">Position|Stellung|Angestellter?</token>
-                </pattern>
-                <message>Meinten Sie <suggestion><match no="1" regexp_match="eid" regexp_replace="eit"/></suggestion>?</message>
-                <example correction="leitende">Er hat eine <marker>leidende</marker> Position.</example>
             </rule>
         </rulegroup>
         <rulegroup id="LIESST" name="ließt (liest)">
@@ -10778,14 +10744,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <example correction="">Italdesign, eines der weltweit besten Designbüros <marker>der Welt</marker>.</example>
             <example>Sie verkaufte 300 Millionen Tonträger weltweit, damit ist sie die kommerziell erfolgreichste Sängerin der Welt . </example>
         </rule>
-        <rule id="ZENTRALER_KERNBAUSTEIN" name="zentraler Kernbaustein">
-            <pattern>
-                <token inflected="yes">zentral</token>
-                <token inflected="yes">Kernbaustein</token>
-            </pattern>
-            <message>Die Wendung '\1 \2' ist redundant. Sprechen Sie einfach von <suggestion>\2</suggestion> oder <suggestion>\1 <match no="2" regexp_match="Kernb" regexp_replace="B"/></suggestion></message>
-            <example correction="Kernbausteinen|zentralen Bausteinen">Das Modul besteht aus drei <marker>zentralen Kernbausteinen</marker>.</example>
-        </rule>
         <rule id="NEBEN_MIT" name="neben mit">
             <antipattern>
                 <token>neben</token>
@@ -14579,18 +14537,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <rulegroup id="IM_AUS" name="im aus (Aus)">
             <rule>
                 <pattern>
-                    <token regexp="yes">i(m|ns)|das</token>
+                    <token regexp="yes">i(m|ns)</token>
                     <marker>
                         <token case_sensitive="yes">aus</token>
                     </marker>
-                    <token postag="SENT_END|VER:.*|^PRP:.+" postag_regexp="yes"/>
+                    <token postag="SENT_END|PKT|VER:.*" postag_regexp="yes"/>
                 </pattern>
                 <message>&inwend;'im Aus sein/landen' wird <suggestion>Aus</suggestion> großgeschrieben.</message>
                 <short>&prgk;.</short>
                 <example correction="Aus">Der Ball landete im <marker>aus</marker>.</example>
                 <example correction="Aus">Weil der Ball im <marker>aus</marker> landete, verlor er das Spiel.</example>
                 <example correction="Aus">Der Ball rollte ins <marker>aus</marker>.</example>
-                <example correction="Aus">Das <marker>aus</marker> für Italien kam unerwartet.</example>
                 <example>Im aus vielen Erzählungen bekannten Atlantis soll ein Schatz liegen.</example>
                 <example>Der Ball rollte ins Aus.</example>
             </rule>
@@ -14603,7 +14560,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token regexp="yes">(vor)?gestern|heute</token>
                 </antipattern>
                 <pattern>
-                    <token regexp="yes">im|ins|das</token>
+                    <token regexp="yes">im|das</token>
                     <marker>
                         <token case_sensitive="yes" regexp="yes">(vor)?gestern|heute</token>
                     </marker>
@@ -14657,12 +14614,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <marker>
                         <token>klaren</token>
                     </marker>
-                    <token regexp="yes">darüber|,</token>
+                    <token>darüber</token>
                 </pattern>
                 <message>&inwend;'sich im Klaren sein' wird <suggestion>Klaren</suggestion> großgeschrieben.</message>
                 <short>&prgk;.</short>
                 <example correction="Klaren">Bin ich mir im <marker>klaren</marker> darüber?</example>
-                <example correction="Klaren">Wir sind uns im <marker>klaren</marker>, was das bedeutet.</example>
                 <example correction="Klaren">Ich bin mir nicht im <marker>klaren</marker> darüber.</example>
                 <example correction="Klaren">Warum seid ihr euch im <marker>klaren</marker> darüber, dass das nicht gut ist?</example>
                 <example>Bin ich dir im <marker>klaren</marker> Wasser begegnet?</example>
@@ -22626,7 +22582,7 @@ Andere Projekte</example>
                     <marker>
                         <token>wegen</token>
                     </marker>
-                    <token postag="SENT_END"><exception postag_regexp="yes" postag="SUB.*|UNKNOWN"/></token>
+                    <token postag="SENT_END"><exception postag_regexp="yes" postag="SUB.*"/></token>
                 </pattern>
                 <message>&subanfang;<suggestion>Wegen</suggestion>&subende;</message>
                 <short>&prgk;.</short>
@@ -22635,7 +22591,6 @@ Andere Projekte</example>
                 <example>Tut mir leid <marker>wegen</marker> gestern</example>
                 <example>Schmerzensgeld <marker>wegen</marker> Beleidigung</example>
                 <example>Von wegen!</example>
-                <example>Urteil wegen Wiederbetätigung</example>
             </rule>
             <rule>
                 <pattern>
@@ -28963,16 +28918,6 @@ Andere Projekte</example>
                 <example>Dass ihr trotz dieser Krankheit arbeiten könnt, ist gut.</example>
                 <example>Sie sagte, dass es ihr leid tut.</example>
             </rule>
-            <rule>
-                <pattern case_sensitive="yes">
-                    <token postag="SENT_START"/>
-                    <token postag="ADV.*" postag_regexp="yes" regexp="yes">W[a-zäöü]+</token>
-                    <token regexp="yes">sind|waren</token>
-                    <marker><token postag="SUB:NOM:SIN:.+" postag_regexp="yes"><exception postag="SUB:NOM:PLU:.+" postag_regexp="yes"></exception></token></marker>
-                </pattern>
-                <message>Sollte hier der Plural <suggestion><match no="4" postag_regexp="yes" postag="SUB:NOM:SIN:(.*)" postag_replace="SUB:NOM:PLU:$1"/></suggestion> verwendet werden?</message>
-                <example correction="Eigenleistungen">Wo sind <marker>Eigenleistung</marker> am besten möglich?</example>
-            </rule>
         </rulegroup>
         <rule id="PASSIV_KEIN_PARTIZIP" name="fehlerhafte Passivkonstruktion (z.B. 'ist fahndet (gefahndet) worden')">
             <pattern>
@@ -30167,13 +30112,6 @@ Andere Projekte</example>
                 <example>Ein Architekturmodell von Objekten insbesondere aus der Informatik, das als Vorlage für die Entwicklung dient, wird Referenzarchitektur genannt.</example>
             </rule>
             <rule>
-                <antipattern>
-                    <token postag='ART:.+:.+:PLU:MAS' postag_regexp='yes'></token>
-                    <token postag='SUB:.+:PLU:MAS' postag_regexp='yes'></token>
-                    <token>,</token>
-                    <token regexp='yes' skip="-1">d(ie|as)</token>
-                    <token>,</token>
-                </antipattern>
                 <pattern>
                     <token postag='ART:.+:.+:SIN:MAS' postag_regexp='yes'></token>
                     <token postag='SUB:.+:SIN:MAS' postag_regexp='yes'></token>
@@ -30192,7 +30130,6 @@ Andere Projekte</example>
                 <example>Erfahrung ist die Summe der Fehler, die man gemacht hat.</example>
                 <example>Einen Krieg mit den Goten, die bereits sein Vorgänger entscheidend geschlagen hatte, konnte er relativ schnell zu Ende führen.</example>
                 <example>RISC ist eine Abkürzung aus dem IT-Bereich, die eine Bauart von Prozessoren bezeichnet.</example>
-                <example>Er zeigte ihn den Beamten, die sich wunderten, dass er gekommen war.</example>
             </rule>
         </rulegroup> 
     </category>
@@ -30212,7 +30149,7 @@ Andere Projekte</example>
             <example correction="Meines Erachtens"><marker>Meines Erachtens nach</marker> hätte der Richter den Angeklagten freisprechen müssen.</example>
         </rule>
         <rule id="FUENFTES_RAD" name="drittes (fünftes) Rad am Wagen">
-            <regexp>(drittes?) (Rad) (am) (Wagen)</regexp>
+            <regexp>(dritte|drittes) (Rad) (am) (Wagen)</regexp>
             <message>Die Redewendung im Sinne von 'überflüssig; fehl am Platz' lautet <suggestion><match no="1" regexp_match="dritt" regexp_replace="fünft"/> Rad am Wagen</suggestion>.</message>
             <example correction="fünfte Rad am Wagen">Er war das <marker>dritte Rad am Wagen</marker></example>
             <example correction="fünftes Rad am Wagen">Er fühlt sich wie ein <marker>drittes Rad am Wagen</marker></example>
@@ -34695,7 +34632,7 @@ Andere Projekte</example>
 <!-- Komma vor Nebensatz   -->
             <rule>
                 <antipattern>
-                    <token regexp="yes">(&zeiteinheitensing;)e?</token>
+                    <token regexp="yes">(&zeiteinheitensing;)e</token>
                     <token>nachdem</token>
                 </antipattern>
                 <antipattern>
@@ -34774,7 +34711,6 @@ Andere Projekte</example>
                 <example>Ich bin erstaunt ob deiner schnellen Antwort.</example>
                 <example>Der Waffenstillstand unterbrach das Programm, kurz nachdem es begonnen hatte.</example>
                 <example>Er tut das, erst recht wenn er betrunken ist.</example>
-                <example>Einen Tag nachdem der Staat Israel ausgerufen worden war, griffen arabische Armeen an.</example>
             </rule>
             <rule>
                 <antipattern>

@@ -135,7 +135,7 @@ final class PatternRuleMatcher extends AbstractPatternRulePerformer implements R
       }
       if (allElementsMatch && tokenPositions.size() == patternSize) {
         RuleMatch ruleMatch = createRuleMatch(tokenPositions,
-            tokens, firstMatchToken, lastMatchToken, firstMarkerMatchToken, lastMarkerMatchToken, sentence);
+            tokens, firstMatchToken, lastMatchToken, firstMarkerMatchToken, lastMarkerMatchToken);
         if (ruleMatch != null) {
           ruleMatches.add(ruleMatch);
         }
@@ -149,9 +149,8 @@ final class PatternRuleMatcher extends AbstractPatternRulePerformer implements R
 
   @Nullable
   private RuleMatch createRuleMatch(List<Integer> tokenPositions,
-                                    AnalyzedTokenReadings[] tokens, int firstMatchToken,
-                                    int lastMatchToken, int firstMarkerMatchToken, int lastMarkerMatchToken,
-                                    AnalyzedSentence sentence) throws IOException {
+      AnalyzedTokenReadings[] tokens, int firstMatchToken,
+      int lastMatchToken, int firstMarkerMatchToken, int lastMarkerMatchToken) throws IOException {
     PatternRule rule = (PatternRule) this.rule;
     String errMessage = formatMatches(tokens, tokenPositions,
             firstMatchToken, rule.getMessage(), rule.getSuggestionMatches());
@@ -202,7 +201,7 @@ final class PatternRuleMatcher extends AbstractPatternRulePerformer implements R
       //now do some spell-checking:
       if (!(errMessage.contains(PatternRuleHandler.PLEASE_SPELL_ME) && errMessage.contains(MISTAKE))) {
         String clearMsg = errMessage.replaceAll(PatternRuleHandler.PLEASE_SPELL_ME, "").replaceAll(MISTAKE, "");
-        RuleMatch ruleMatch = new RuleMatch(rule, sentence, fromPos, toPos, clearMsg,
+        RuleMatch ruleMatch = new RuleMatch(rule, fromPos, toPos, clearMsg,
                 shortErrMessage, startsWithUppercase, suggestionsOutMsg);
         if (rule.getFilter() != null) {
           RuleFilterEvaluator evaluator = new RuleFilterEvaluator(rule.getFilter());

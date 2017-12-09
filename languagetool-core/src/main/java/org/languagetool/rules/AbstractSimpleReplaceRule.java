@@ -161,7 +161,8 @@ public abstract class AbstractSimpleReplaceRule extends Rule {
           replacements.remove(originalTokenStr);
         }
         if (replacements.size() > 0) {
-          RuleMatch potentialRuleMatch = createRuleMatch(tokenReadings, replacements, sentence);
+          RuleMatch potentialRuleMatch = createRuleMatch(tokenReadings,
+              replacements);
           ruleMatches.add(potentialRuleMatch);
         }
       }
@@ -178,11 +179,11 @@ public abstract class AbstractSimpleReplaceRule extends Rule {
   }
 
   protected RuleMatch createRuleMatch(AnalyzedTokenReadings tokenReadings,
-                                      List<String> replacements, AnalyzedSentence sentence) {
+      List<String> replacements) {
     String tokenString = tokenReadings.getToken();
     int pos = tokenReadings.getStartPos();
 
-    RuleMatch potentialRuleMatch = new RuleMatch(this, sentence, pos, pos
+    RuleMatch potentialRuleMatch = new RuleMatch(this, pos, pos
         + tokenString.length(), getMessage(tokenString, replacements), getShort());
 
     if (!isCaseSensitive() && StringTools.startsWithUppercase(tokenString)) {

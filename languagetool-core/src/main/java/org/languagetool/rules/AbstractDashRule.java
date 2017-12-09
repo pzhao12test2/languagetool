@@ -59,10 +59,10 @@ public abstract class AbstractDashRule extends Rule {
   public RuleMatch[] match(AnalyzedSentence sentence) throws IOException {
     List<RuleMatch> matches = new ArrayList<>();
     for (PatternRule dashRule : dashRules) {
-      for (RuleMatch match : dashRule.match(sentence)) {
+      for (RuleMatch ruleMatch : dashRule.match(sentence)) {
         RuleMatch rm = new RuleMatch
-            (this, match.getSentence(), match.getFromPos(), match.getToPos(), match.getMessage(),
-                match.getShortMessage(), false, "");
+            (this, ruleMatch.getFromPos(), ruleMatch.getToPos(), ruleMatch.getMessage(),
+                ruleMatch.getShortMessage(), false, "");
         matches.add(rm);
       }
     }
