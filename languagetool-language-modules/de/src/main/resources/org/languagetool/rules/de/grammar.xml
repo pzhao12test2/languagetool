@@ -110,20 +110,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <!-- Tippfehler -->
     <!-- ====================================================================== -->
     <category id="TYPOS" name="Mögliche Tippfehler">
-        <rule id="DE_KOMMA" name="de, (dem)">
-            <antipattern>
-                <token>.</token>
-                <token>de</token>
-                <token>,</token>
-            </antipattern>
-            <pattern>
-                <token>de</token>
-                <token>,</token>
-            </pattern>
-            <message>Meinten Sie <suggestion>dem</suggestion>?</message>
-            <example correction="dem">Wir kommen mit <marker>de,</marker> Plan gut voran.</example>
-            <example>Ich war auf heise.<marker>de,</marker> dort fanden die jährlichen Trollweltmeisterschaften statt.</example>
-        </rule>
         <rule id="EUCH_ALL" name="euch all (alle)">
             <pattern>
                 <token>euch</token>
@@ -3864,15 +3850,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example correction="werde">Falls ich dazu gezwungen <marker>erde</marker>, werde ich mich beschweren.</example>
             </rule>
         </rulegroup>
-        <rule id="GEROCHEN_GEBROCHEN" name="gerochen (gebrochen)">
-            <pattern>
-                <marker><token inflected="yes" case_sensitive="yes">gerochen</token></marker>
-                <token regexp="yes">&sprachadj1;|Arm|Bein</token>
-            </pattern>
-            <message>Meinten Sie <suggestion><match no="1" regexp_match="ger" regexp_replace="gebr"/></suggestion>?</message>
-            <example correction="gebrochenem">Er antwortete in <marker>gerochenem</marker> Englisch.</example>
-            <example correction="gebrochenes">Sein <marker>gerochenes</marker> Bein behindert ihn.</example>
-        </rule>
     </category>
 
     <!-- ====================================================================== -->
@@ -10766,14 +10743,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <suggestion></suggestion>
             <example correction="">Italdesign, eines der weltweit besten Designbüros <marker>der Welt</marker>.</example>
             <example>Sie verkaufte 300 Millionen Tonträger weltweit, damit ist sie die kommerziell erfolgreichste Sängerin der Welt . </example>
-        </rule>
-        <rule id="ZENTRALER_KERNBAUSTEIN" name="zentraler Kernbaustein">
-            <pattern>
-                <token inflected="yes">zentral</token>
-                <token inflected="yes">Kernbaustein</token>
-            </pattern>
-            <message>Die Wendung '\1 \2' ist redundant. Sprechen Sie einfach von <suggestion>\2</suggestion> oder <suggestion>\1 <match no="2" regexp_match="Kernb" regexp_replace="B"/></suggestion></message>
-            <example correction="Kernbausteinen|zentralen Bausteinen">Das Modul besteht aus drei <marker>zentralen Kernbausteinen</marker>.</example>
         </rule>
         <rule id="NEBEN_MIT" name="neben mit">
             <antipattern>
