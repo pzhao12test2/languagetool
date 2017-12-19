@@ -58,7 +58,7 @@ class LanguageToolHttpHandler implements HttpHandler {
     } else {
       this.ownIps = new HashSet<>();
     }
-    this.textCheckerV2 = new V2TextChecker(config, internal, workQueue);
+    this.textCheckerV2 = new V2TextChecker(config, internal);
   }
 
   /** @since 2.6 */
