@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.apache.commons.lang3.StringUtils;
 import org.languagetool.AnalyzedSentence;
 import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.Language;
@@ -95,13 +94,15 @@ public class WordRepeatRule extends Rule {
   // avoid "..." etc. to be matched:
   private boolean isWord(String token) {
     boolean isWord = true;
-    if (token.isEmpty() || StringUtils.isNumeric(token)) {
+    if (token.length() == 0) {
       isWord = false;
     } else if (token.length() == 1) {
       char c = token.charAt(0);
       if (!Character.isLetter(c)) {
         isWord = false;
       }
+    } else if (token.matches("0+")) {  // e.g. "1 000 000"
+      isWord = false;
     }
     return isWord;
   }

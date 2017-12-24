@@ -63,15 +63,13 @@ abstract class TextChecker {
   
   private final Map<String,Integer> languageCheckCounts = new HashMap<>(); 
   private final boolean internalServer;
-  private Queue<Runnable> workQueue;
   private final LanguageIdentifier identifier;
   private final ExecutorService executorService;
   private final ResultCache cache;
 
-  TextChecker(HTTPServerConfig config, boolean internalServer, Queue<Runnable> workQueue) {
+  TextChecker(HTTPServerConfig config, boolean internalServer) {
     this.config = config;
     this.internalServer = internalServer;
-    this.workQueue = workQueue;
     this.identifier = new LanguageIdentifier();
     this.executorService = Executors.newCachedThreadPool();
     this.cache = config.getCacheSize() > 0 ? new ResultCache(config.getCacheSize()) : null;
@@ -188,7 +186,7 @@ abstract class TextChecker {
     print("Check done: " + aText.getPlainText().length() + " chars, " + languageMessage + ", #" + count + ", " + referrer + ", "
             + matches.size() + " matches, "
             + (System.currentTimeMillis() - timeStart) + "ms, agent:" + agent
-            + ", " + messageSent + ", q:" + (workQueue != null ? workQueue.size() : "?"));
+            + ", " + messageSent);
   }
 
   private UserLimits getUserLimits(Map<String, String> params) {
